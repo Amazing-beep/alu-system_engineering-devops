@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Installs Nginx and configures it to display 'Holberton School for the win!' at the root
+
+# Update package lists
+apt-get update -y
+
+# Install nginx
+apt-get install nginx -y
+
+# Replace default index page content
+echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
+
+# Start nginx (without using systemctl)
+service nginx start || /etc/init.d/nginx start
+
